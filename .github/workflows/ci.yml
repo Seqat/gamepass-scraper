@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint and type check (Python 3.13)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      # setup-uv is pinned to an exact release tag. Dependabot keeps it current.
+      - uses: astral-sh/setup-uv@v7.1.0
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: uv sync --locked
+      - name: Ruff lint
+        run: uv run ruff check .
+      - name: Ruff format check
+        run: uv run ruff format --check .
+      - name: Pyright
+        run: uv run pyright
+
+  test:
+    name: Test (Python ${{ matrix.python-version }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python-version: "3.11"
+          - os: ubuntu-latest
+            python-version: "3.12"
+          - os: ubuntu-latest
+            python-version: "3.13"
+          - os: ubuntu-latest
+            python-version: "3.14"
+          # Windows is only tested on one interpreter; it catches CSV newline issues.
+          - os: windows-latest
+            python-version: "3.13"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      # setup-uv is pinned to an exact release tag. Dependabot keeps it current.
+      - uses: astral-sh/setup-uv@v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: uv sync --locked
+      - name: Run tests
+        run: uv run pytest

@@ -1,0 +1,99 @@
+{
+  "Products": [
+    {
+      "ProductId": "9NBLGGH4R315",
+      "LocalizedProperties": [
+        {
+          "DeveloperName": "Lumen Studio",
+          "PublisherName": "Lumen Interactive",
+          "ProductTitle": "Pixel Harbor",
+          "Images": [
+            {"ImagePurpose": "Logo", "Uri": "//img.example.com/pixel-harbor/logo.png", "Width": 300, "Height": 300},
+            {"ImagePurpose": "BoxArt", "Uri": "//img.example.com/pixel-harbor/boxart.jpg", "Width": 1080, "Height": 1080},
+            {"ImagePurpose": "Poster", "Uri": "//img.example.com/pixel-harbor/poster.jpg", "Width": 2160, "Height": 3240}
+          ]
+        }
+      ],
+      "MarketProperties": [
+        {"OriginalReleaseDate": "2020-11-10T00:00:00.0000000Z"}
+      ],
+      "Properties": {
+        "Categories": ["Action", "Indie"],
+        "Category": "Game"
+      }
+    },
+    {
+      "ProductId": "9PFZWPPG2HZ8",
+      "LocalizedProperties": [
+        {
+          "DeveloperName": "Northwind Works",
+          "PublisherName": "Northwind Works",
+          "ProductTitle": "Quiet Fjord"
+        }
+      ],
+      "MarketProperties": [
+        {"OriginalReleaseDate": "2021-03-02T00:00:00.0000000Z"}
+      ],
+      "Properties": {
+        "Categories": ["RPG"]
+      }
+    },
+    {
+      "ProductId": "9NZ9Q8N8NC2Z",
+      "LocalizedProperties": [
+        {
+          "DeveloperName": "Vector Forge",
+          "PublisherName": "Vector Forge",
+          "ProductTitle": "Starfall Circuit",
+          "Images": [
+            {"ImagePurpose": "TitledHeroArt", "Uri": "//img.example.com/starfall/hero.jpg", "Width": 1920, "Height": 1080},
+            {"ImagePurpose": "BoxArt", "Uri": "https://img.example.com/starfall/boxart.jpg", "Width": 1080, "Height": 1080}
+          ]
+        }
+      ],
+      "MarketProperties": [
+        {"OriginalReleaseDate": "1601-01-01T00:00:00.0000000Z"}
+      ],
+      "Properties": {
+        "Categories": ["Racing", "Multiplayer"]
+      }
+    },
+    {
+      "ProductId": "9P8GB3D2SZ5K",
+      "LocalizedProperties": [
+        {
+          "DeveloperName": "Harrow Field Games",
+          "ProductTitle": "Tidewater Farm",
+          "Images": [
+            {"ImagePurpose": "Logo", "Uri": "//img.example.com/tidewater/logo.png", "Width": 300, "Height": 300}
+          ]
+        }
+      ],
+      "MarketProperties": [
+        {"OriginalReleaseDate": "2023-07-14T00:00:00.0000000Z"}
+      ],
+      "Properties": {
+        "Category": "Simulation"
+      }
+    },
+    {
+      "ProductId": "9MZ1SNWT0N5D",
+      "LocalizedProperties": [
+        {
+          "DeveloperName": "Brightwell Interactive",
+          "PublisherName": "Brightwell Interactive",
+          "ProductTitle": "Console Lantern",
+          "Images": [
+            {"ImagePurpose": "Poster", "Uri": "//img.example.com/lantern/poster.jpg", "Width": 2160, "Height": 3240}
+          ]
+        }
+      ],
+      "MarketProperties": [
+        {"OriginalReleaseDate": "2022-05-19T00:00:00.0000000Z"}
+      ],
+      "Properties": {
+        "Categories": ["Adventure"]
+      }
+    }
+  ]
+}

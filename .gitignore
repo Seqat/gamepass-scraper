@@ -160,5 +160,11 @@ cython_debug/
 #.idea/
 
 
-# CSV files
-*.csv
+# Output files written by the CLI at the repository root (test fixtures are kept)
+/games.csv
+/games.json
+/output/
+
+# Tool caches
+.ruff_cache/
+.pytest_cache/
