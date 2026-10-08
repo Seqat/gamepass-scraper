@@ -20,7 +20,7 @@ jobs:
         with:
           persist-credentials: false
       # setup-uv is pinned to an exact release tag. Dependabot keeps it current.
-      - uses: astral-sh/setup-uv@v7.1.0
+      - uses: astral-sh/setup-uv@v10.2.0
         with:
           python-version: "3.13"
       - name: Install dependencies
@@ -55,7 +55,7 @@ jobs:
         with:
           persist-credentials: false
       # setup-uv is pinned to an exact release tag. Dependabot keeps it current.
-      - uses: astral-sh/setup-uv@v7.1.0
+      - uses: astral-sh/setup-uv@v10.2.0
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
