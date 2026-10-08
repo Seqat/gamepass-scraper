@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gamepass-scraper"
+version = "1.0.0"
+description = "Export the Xbox Game Pass game catalog (PC, console, cloud, EA Play) to CSV or JSON."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["xbox", "game-pass", "scraper", "catalog"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "httpx>=0.28",
+    "lxml>=5.3",
+]
+
+[project.scripts]
+gamepass-scraper = "gamepass_scraper.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/seqat/gamepass-scraper"
+Repository = "https://github.com/seqat/gamepass-scraper"
+
+[dependency-groups]
+dev = [
+    "pytest>=9",
+    "respx>=0.23",
+    "ruff>=0.16",
+    "pyright>=1.1.400",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gamepass_scraper"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.pyright]
+typeCheckingMode = "standard"
+pythonVersion = "3.11"
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
