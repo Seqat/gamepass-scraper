@@ -1,6 +1,13 @@
 # GamePass-Scraper Modernizasyon Planı
 
-_Tarih: 2026-10-08 · Durum: taslak, uygulanmadı_
+_Tarih: 2026-10-08 · Durum: Faz 2–5 v1.0.0 sürümünde uygulandı (Faz 1 bunlara dahil edildi). Faz 0 (canlı doğrulama) hâlâ bekliyor; derleme ortamında ağ erişimi engelli. Faz 6 karar gereği kapsam dışı bırakıldı._
+
+## Kararlar
+
+- **Kapsam:** Tam özellikli, paketlenmiş bir komut satırı aracı (`gamepass-scraper`). Yalnızca öğrenme betiği olarak bırakılmadı.
+- **Veri kaynağı:** Birincil kaynak Microsoft kataloğu (SIGL + displaycatalog). gamepasscounter.com ikincil yedek kaynak olarak kaldı; `--source auto` ile yalnızca PC listesinde devreye girer.
+- **README dili:** İki dilli (İngilizce ve Türkçe), tek dosyada.
+- **Faz 6:** Kapsam dışı. Günlük anlık görüntü ve fark raporu, katman/ilk gün işaretleri ve statik site/RSS çıktısı bu sürümde yapılmayacak.
 
 ## 1. Mevcut durum
 
