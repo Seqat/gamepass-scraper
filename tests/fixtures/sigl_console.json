@@ -1,0 +1,12 @@
+[
+  {
+    "siglId": "f6f1f99f-9b49-4ccd-b3bf-4d9767a77f5e",
+    "title": "Console Game Pass",
+    "description": "Games available on Xbox consoles with Game Pass",
+    "requiresShuffling": "False",
+    "imageUrl": "https://example.com/sigl/console.jpg"
+  },
+  {"id": "9NZ9Q8N8NC2Z"},
+  {"id": "9MZ1SNWT0N5D"},
+  {"id": "9N7TCNNW7C7N"}
+]

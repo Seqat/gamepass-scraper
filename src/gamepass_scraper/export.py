@@ -60,15 +60,24 @@ def write_games(games: Sequence[Game], fmt: Literal["csv", "json"], output: str)
     Parent directories of the output file are created as needed.
     """
     if output == "-":
-        if fmt == "csv" and isinstance(sys.stdout, io.TextIOWrapper):
-            # The csv module writes its own \r\n; stop text mode turning it into \r\r\n.
-            sys.stdout.reconfigure(newline="")
+        _prepare_stdout(fmt)
         _write_stream(games, fmt, sys.stdout)
         return
     path = Path(output)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as fh:
         _write_stream(games, fmt, fh)
+
+
+def _prepare_stdout(fmt: Literal["csv", "json"]) -> None:
+    """Make stdout write UTF-8 whatever the console code page, like the file output."""
+    if not isinstance(sys.stdout, io.TextIOWrapper):
+        return
+    if fmt == "csv":
+        # The csv module writes its own \r\n; stop text mode turning it into \r\r\n.
+        sys.stdout.reconfigure(encoding="utf-8", newline="")
+    else:
+        sys.stdout.reconfigure(encoding="utf-8")
 
 
 def _write_stream(games: Sequence[Game], fmt: Literal["csv", "json"], fh: TextIO) -> None:

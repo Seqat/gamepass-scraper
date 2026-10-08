@@ -99,7 +99,7 @@ def parse_product(product: Mapping[str, Any], lists: Sequence[str]) -> Game | No
         return None
 
     categories = details.get("Categories")
-    if not isinstance(categories, list):
+    if not isinstance(categories, list) or not categories:
         categories = [details.get("Category")]
 
     return Game(
